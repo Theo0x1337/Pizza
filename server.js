@@ -5,6 +5,8 @@ const express = require('express');
 //Use chalk to add colours on the console
 const chalk = require('chalk');
 
+let bodyParser = require('body-parser');
+
 //The 404 middleware used when an incoming request
 //hits a wrong route
 const http404 = require('./middleware/route404');
@@ -20,6 +22,23 @@ const {loggers, transports, format} = require("winston");
 
 //Create an application 
 const app = express();
+
+
+//Accessing MongoDB
+const mongoose = require('mongoose');
+
+//Create an application 
+const app = express();
+
+//used to fetch the data from forms on HTTP POST, and PUT
+app.use(bodyParser.urlencoded({
+
+    extended : true
+  
+  }));
+  
+app.use(bodyParser.json());
+
 
 //Use the morgan logging 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
@@ -44,6 +63,24 @@ loggers.add('errorLogger', {
 });
 
 const infoLogger = loggers.get('infoLogger');
+
+
+//Connecting to MongoDB (async/await approach)
+const connectDb = async () => {
+    await mongoose.connect('mongodb://localhost:27017/todo', {useNewUrlParser: true, useUnifiedTopology : true}).then(
+        () => {
+            console.log(chalk.green(`Connected to database`))
+            infoLogger.info("Connected to database");
+        },
+        error => {
+            console.error(chalk.red(`Connection error: ${error.stack}`))
+            process.exit(1)
+        }
+    )
+  }
+  
+  connectDb().catch(error => console.error(error))
+
 
 const pizzaRoad = require('./road/pizza');
 
