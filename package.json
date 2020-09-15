@@ -1,0 +1,31 @@
+{
+  "name": "pizza",
+  "version": "1.0.0",
+  "description": "Fullstack project in javascript",
+  "main": "server.js",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheoBernardin/Pizza.git"
+  },
+  "keywords": [
+    "pizza",
+    "fullstack",
+    "js"
+  ],
+  "author": "Théo Bernardin / Kevin Fanton / Yoann Raguenes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheoBernardin/Pizza/issues"
+  },
+  "homepage": "https://github.com/TheoBernardin/Pizza#readme"
+}
