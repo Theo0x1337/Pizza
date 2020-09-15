@@ -59,6 +59,35 @@ app.get('/', (req, res) => {
 //Accessing the road for the user
 const pizzaRoad = require('./road/pizza');
 
+//Use the morgan logging 
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+
+//Define the loggers for Winston
+loggers.add('infoLogger', {
+    level: 'info',
+    transports: [new transports.File({ filename: path.join(__dirname, 'logs/info.log')})],
+    format: format.printf((info) => {
+      let message = `${new Date(Date.now()).toUTCString()} | ${info.level.toUpperCase()}  | ${info.message}`
+      return message
+    })
+});
+
+loggers.add('errorLogger', {
+    level: 'error',
+    transports: [new transports.File({ filename: path.join(__dirname, 'logs/error.log')})],
+    format: format.printf((info) => {
+      let message = `${new Date(Date.now()).toUTCString()} | ${info.level.toUpperCase()}  | ${info.message}`
+      return message
+    })
+});
+
+const infoLogger = loggers.get('infoLogger');
+
+//Send back a raw message every time the server got an 
+//incoming request
+app.get('/', (req, res) => {
+
+
 //Acces the routes 
 app.use(pizzaRoad); 
 
