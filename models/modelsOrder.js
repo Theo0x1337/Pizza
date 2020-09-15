@@ -6,7 +6,7 @@ var OrderSchema = new Schema({
   numberOrder: Number,
   clientName : String,
   order : String,
-  deliveryAdresse : String,
+  deliveryAddress : String,
   done : {
     type : Boolean,
     default : false

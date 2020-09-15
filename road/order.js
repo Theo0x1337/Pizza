@@ -1,24 +1,33 @@
 //Access the router on Express 
 const router = require('express').Router();
 
+//Access the controllers
+const controller = require('../controllers/order');
+
 //CREATE
-router.post("/commande", (req, res) => {
-       res.json({"msg": "Vous avez envoyé les informations nécessaires pour une commande"});
+router.post("/order", (req, res) => {
+
+    controller.create(req, res);
+    
 });
 
 //READ
-router.get("/commande", (req, res) => {
-    res.json({"msg": "Veuillez selectionnez vos produits et remplir l'adresse de livraison"});
+router.get("/orders", (req, res) => {
+    
+    controller.reads(req, res);
+
 });
 
-//UPDATE
-router.put("/commande", (req, res) => {
-    res.json({"msg": "Vous avez modifié votre commande"});
+router.get("/order/:id", (req, res) => {
+    
+    controller.read(req, res);
+
 });
+
 
 //DELETE
-router.delete("/commande", (req, res) => {
-    res.json({"msg": "Vous avez annulé votre commande"});
+router.delete("/order/:id", (req, res) => {
+    controller.delete(req,res);
 });
 
 module.exports = router;

@@ -1,11 +1,10 @@
 function createOrder(req, res) {
-    let Order = require('../models/commande');
-    let newOrder = Commande ({
-        OrderNumber: req.body.number,
-        description : req.body.description,
-        itemNumber : req.body.itemNumber,
-        address : req.body.address,
-        paymentMethod: req.body.paymentMethod
+    let Order = require('../models/modelsOrder');
+    let newOrder = Order ({
+        numberOrder: req.body.number,
+        clientName : req.body.clientName,
+        order : req.body.order,
+        deliveryAddress : req.body.deliveryAddress
     });
   
     newOrder.save()
@@ -20,4 +19,49 @@ function createOrder(req, res) {
 
 }
 
+
+
+function deleteOrder(req, res) {
+
+    let Order = require("../models/modelsOrder");
+
+    Order.findOneAndRemove({_id : req.params.id})
+    .then((deletedOrder) => {
+        res.status(200).json(deletedOrder);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
+
+
+ function readOrder(req, res) {
+
+    let Order = require("../models/modelsOrder");
+
+    Order.findById({_id : req.params.id})
+    .then((order) => {
+        res.status(200).json(order);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
+
+ function readOrders(req, res) {
+
+    let Order = require("../models/modelsOrder");
+
+    Order.find({})
+    .then((orders) => {
+        res.status(200).json(orders);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
+
 module.exports.create = createOrder;
+module.exports.delete = deleteOrder;
+module.exports.read = readOrder;
+module.exports.reads = readOrders;
