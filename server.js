@@ -8,13 +8,11 @@ const chalk = require('chalk');
 //Create an application 
 const app = express();
 
-//Send back a raw message every time the server got an 
-//incoming request
-app.get('/', (req, res) => {
+//Accessing the road for the user
+const pizzaRoad = require('./road/pizza');
 
-    res.json({'msg':'You are reaching homepage'});
-
-});
+//Acces the routes 
+app.use(pizzaRoad); 
 
 //Listen on the port 3000
 app.listen(3000);
