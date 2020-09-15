@@ -27,8 +27,6 @@ const app = express();
 //Accessing MongoDB
 const mongoose = require('mongoose');
 
-//Create an application 
-const app = express();
 
 //used to fetch the data from forms on HTTP POST, and PUT
 app.use(bodyParser.urlencoded({
