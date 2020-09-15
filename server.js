@@ -51,7 +51,7 @@ const infoLogger = loggers.get('infoLogger');
 //Send back a raw message every time the server got an 
 //incoming request
 app.get('/', (req, res) => {
-
+}
 
 //Acces the routes 
 app.use(pizzaRoad); 
