@@ -18,3 +18,5 @@ router.get("/product/:id", (req, res) => {
     controller.read(req, res);
 
 });
+
+module.exports.router;

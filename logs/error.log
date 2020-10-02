@@ -7,3 +7,9 @@ Tue, 15 Sep 2020 15:26:50 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Tue, 15 Sep 2020 15:27:17 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/products/
 Tue, 15 Sep 2020 15:28:09 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/products/
 Tue, 15 Sep 2020 15:28:10 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/products/
+Fri, 02 Oct 2020 08:56:14 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/
+Fri, 02 Oct 2020 08:56:14 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
+Fri, 02 Oct 2020 08:56:22 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/pizza
+Fri, 02 Oct 2020 08:57:34 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/products
+Fri, 02 Oct 2020 08:57:37 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/product
+Fri, 02 Oct 2020 08:57:42 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/product:1

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var OrderSchema = new Schema({
   numberOrder: Number,
   clientName : String,
-  order : String,
+  order : [subSchema],
   deliveryAddress : String,
   done : {
     type : Boolean,

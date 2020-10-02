@@ -6,15 +6,6 @@ router.post("/pizza", (req, res) => {
        res.json({"msg": "Create a Pizza"});
 });
 
-//READ
-router.get("/pizzas", (req, res) => {
-    res.json({"msg": "Read all the Pizza"});
-});
-
-router.get("/pizza", (req, res) => {
-    res.json({"msg": "Read a Pizza"});
-});
-
 //UPDATE
 router.put("/pizza", (req, res) => {
     res.json({"msg": "Update a Pizza"});
@@ -24,5 +15,20 @@ router.put("/pizza", (req, res) => {
 router.delete("/pizza", (req, res) => {
     res.json({"msg": "Delete a Pizza"});
 });
+
+
+//get with name
+router.get("/pizza/:name", (req, res) => {
+    
+    controller.read(req, res);
+
+});
+
+router.get("/pizzas", (req, res) => {
+    
+    controller.reads(req, res);
+
+});
+
 
 module.exports = router;
