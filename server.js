@@ -65,7 +65,7 @@ const infoLogger = loggers.get('infoLogger');
 
 //Connecting to MongoDB (async/await approach)
 const connectDb = async () => {
-    await mongoose.connect('mongodb://localhost:27017/order', {useNewUrlParser: true, useUnifiedTopology : true}).then(
+    await mongoose.connect('mongodb://localhost:27017/pizza', {useNewUrlParser: true, useUnifiedTopology : true}).then(
         () => {
             console.log(chalk.green(`Connected to database`))
             infoLogger.info("Connected to database");
@@ -86,7 +86,7 @@ const commandeRoad = require('./road/order');
 
 const clientRoad = require('./road/client');
 
-//Acces the routes 
+//Access the routes 
 app.use(pizzaRoad); 
 app.use(commandeRoad);
 app.use(clientRoad);
