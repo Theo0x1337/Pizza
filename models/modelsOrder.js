@@ -3,10 +3,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var OrderSchema = new Schema({
-  numberOrder: Number,
-  clientName : String,
-  order : [subSchema],
-  deliveryAddress : String,
+  client : {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Client',
+  },
+  order: [{ 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Pizza'}],
   done : {
     type : Boolean,
     default : false

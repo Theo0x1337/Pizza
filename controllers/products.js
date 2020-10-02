@@ -1,6 +1,3 @@
-
-
-
 function readProduct(req, res) {
 
     let Product = require("../models/modelsProduct");
@@ -14,7 +11,7 @@ function readProduct(req, res) {
  }
 
 
- function readProducts(req, res) {
+ function readPizzas(req, res) {
 
     let Product = require("../models/modelsProduct");
 
@@ -27,5 +24,5 @@ function readProduct(req, res) {
  }
 
 
- module.exports.reads = readProducts;
+ module.exports.reads = readPizzas;
  module.exports.read = readProduct;

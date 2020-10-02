@@ -1,34 +1,23 @@
+
 //Access the router on Express 
 const router = require('express').Router();
 
-//CREATE
-router.post("/pizza", (req, res) => {
-       res.json({"msg": "Create a Pizza"});
-});
-
-//UPDATE
-router.put("/pizza", (req, res) => {
-    res.json({"msg": "Update a Pizza"});
-});
-
-//DELETE
-router.delete("/pizza", (req, res) => {
-    res.json({"msg": "Delete a Pizza"});
-});
+//Access the controllers
+const controller = require('../controllers/pizza');
 
 
-//get with name
-router.get("/pizza/:name", (req, res) => {
-    
-    controller.read(req, res);
-
-});
-
+//READ
 router.get("/pizzas", (req, res) => {
     
     controller.reads(req, res);
 
 });
 
+router.get("/pizza/:id", (req, res) => {
+    
+    controller.read(req, res);
+
+});
 
 module.exports = router;
+

@@ -1,8 +1,8 @@
 function readPizza(req, res) {
 
-    let Product = require("../models/modelsPizza");
+    let Pizza = require("../models/modelsPizza");
 
-    Product.findById({_name : req.params.name})
+    Pizza.findById({_id : req.params.id})
     .then((order) => {
         res.status(200).json(order);
     }, (err) => {
@@ -13,9 +13,9 @@ function readPizza(req, res) {
 
  function readPizzas(req, res) {
 
-    let Product = require("../models/modelsPizza");
+    let Pizza = require("../models/modelsPizza");
 
-    Product.find({})
+    Pizza.find({})
     .then((orders) => {
         res.status(200).json(orders);
     }, (err) => {

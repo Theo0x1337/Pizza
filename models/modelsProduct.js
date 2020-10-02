@@ -3,8 +3,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
-  productNumber: Number,
-  Description : String,
+  name: String,
+  description : String,
 });
 
 module.exports = mongoose.model('Product', ProductSchema);
+
+
