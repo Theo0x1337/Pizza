@@ -84,9 +84,12 @@ const pizzaRoad = require('./road/pizza');
 
 const commandeRoad = require('./road/order');
 
+const clientRoad = require('./road/client');
+
 //Acces the routes 
 app.use(pizzaRoad); 
 app.use(commandeRoad);
+app.use(clientRoad);
 
 //When there is no route that caught the incoming request
 //use the 404 middleware
