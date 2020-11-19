@@ -1,8 +1,7 @@
 function createOrder(req, res) {
     let Order = require('../models/modelsOrder');
     let newOrder = Order ({
-        numberOrder: req.body.number,
-        clientName : req.body.clientName,
+        client : req.body.client,
         order : req.body.order,
         deliveryAddress : req.body.deliveryAddress
     });
